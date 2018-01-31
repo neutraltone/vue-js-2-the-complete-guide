@@ -6,22 +6,50 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>VueJS</title>
   <script src="js/vue.js"></script>
+  <style>
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      display: inline-block;
+      margin: 10px;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
+    .blue {
+      background-color: blue;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <button @click="changeLink">Click to Change Link</button>
-    <a :href="link">Link</a>
+    <div
+      class="demo"
+      @click="attachRed = !attachRed"
+      :class="{red: attachRed}"
+    ></div>
+    <div
+      class="demo"
+      @click="attachGreen = !attachGreen"
+      :class="{green: attachGreen}"
+    ></div>
+    <div
+      class="demo"
+      @click="attachBlue = !attachBlue"
+      :class="{blue: attachBlue}"
+    ></div>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        link: 'http://google.com'
-      },
-      methods: {
-        changeLink: function () {
-          this.link = 'http://apple.com'
-        }
+        attachRed: false,
+        attachBlue: false,
+        attachGreen: false
       }
     });
   </script>
