@@ -9,37 +9,18 @@
 </head>
 <body>
   <div id="app">
-    <button v-on:click="counter++">Increase</button>
-    <button v-on:click="counter--">Decrease</button>
-    <button v-on:click="secondCounter++">Increase Second</button>
-    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
-    <p>Result: {{ result() }} | {{ output }}</p>
+    <button @click="changeLink">Click to Change Link</button>
+    <a :href="link">Link</a>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        counter: 0,
-        secondCounter: 0
-      },
-      computed: {
-        output: function () {
-          console.log('computed');
-          return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
-        }
-      },
-      watch: {
-        counter: function (value) {
-          var vm = this;
-          setTimeout(function () {
-            vm.counter = 0;
-          }, 2000)
-        }
+        link: 'http://google.com'
       },
       methods: {
-        result: function () {
-          console.log('method');
-          return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
+        changeLink: function () {
+          this.link = 'http://apple.com'
         }
       }
     });
