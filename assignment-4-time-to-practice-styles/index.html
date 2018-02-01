@@ -21,13 +21,13 @@
   <div>
     <input type="text" v-model="backgroundColor2">
     <input type="text" v-model="fadeOut">
-    <div class="boxed" :class="[backgroundColor2, {'fade-out': fadeOut}]"></div>
+    <div class="boxed" :class="[backgroundColor2, {'fadeOut': fadeOut}]"></div>
   </div>
   <hr>
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text" v-model="backgroundColor3">
-    <div class="boxed" :style="{backgroundColor: backgroundColor3}"></div>
+    <input type="text" v-model="myStyle.backgroundColor">
+    <div class="boxed" :style="myStyle"></div>
   </div>
   <hr>
   <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->

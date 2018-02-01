@@ -13,7 +13,12 @@ new Vue({
     backgroundColor2: 'blue',
     backgroundColor3: 'green',
     fadeOut: false,
-    progress: 0
+    progress: 0,
+    myStyle: {
+      width: '100px',
+      height: '100px',
+      backgroundColor: '#ff0099',
+    }
   },
   methods: {
     startEffect: function () {
