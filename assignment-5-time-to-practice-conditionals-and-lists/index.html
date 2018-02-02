@@ -19,8 +19,8 @@
   </ul>
   <!-- 4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this) -->
   <ul>
-    <li v-for="(value, key, index) in testData">
-      <div v-if="key != 'data'">{{ value }}</div>
+    <li v-for="(value, key) in testData">
+      <div v-if="!Array.isArray(value)">{{ value }}</div>
       <div v-else>
         {{ key }}
         <ul>
