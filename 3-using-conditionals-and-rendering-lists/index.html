@@ -9,20 +9,19 @@
 </head>
 <body>
   <div id="app">
-    <p v-if="show">You can see me! <span>Hello!</span></p>
-    <p v-else>Now you see me!</p>
-    <template v-if="show">
-      <h1>Heading</h1>
-      <p>Inside a template</p>
-    </template>
-    <p v-show="show">Do you also see me?</p>
-    <button @click="show = !show">Switch</button>
+    <ul>
+      <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+    </ul>
   </div>
   <script>
     new Vue({
       el: '#app',
       data: {
-        show: true
+        ingredients: ['meat', 'friut', 'cookies'],
+        persons: [
+          {name: 'Max', age: 27, color: 'red'},
+          {name: 'Anna', age: 'unknown', color: 'blue'}
+        ]
       }
     });
   </script>
