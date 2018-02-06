@@ -8,8 +8,8 @@
 
 <body>
   <div id="app1">
-    <h1>{{ title }}</h1>
-    <button @click="show">Show Paragraph</button>
+    <h1 ref="heading">{{ title }}</h1>
+    <button @click="show" ref="myButton">Show Paragraph</button>
     <p v-if="showParagraph">This is not always visible.</p>
   </div>
   <div id="app2">
