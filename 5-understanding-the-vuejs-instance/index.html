@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Multiple Vue instances</title>
+  <title>The VueJS Instance</title>
   <script src="https://npmcdn.com/vue/dist/vue.js"></script>
   <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
-  <div id="app1">
-    <h1 ref="heading">{{ title }}</h1>
-    <button @click="show" ref="myButton">Show Paragraph</button>
-    <p v-if="showParagraph">This is not always visible.</p>
-  </div>
-  <div id="app2">
+  <div id="app">
     <h1>{{ title }}</h1>
-    <button @click="onChange">Changes something in Vue 1</button>
-    <hello> </hello>
+    <button @click="title = 'Changed'">Update Title</button>
+    <button @click="destroy">Destroy</button>
   </div>
-  <div id="app3"></div>
   <script src="js/app.js"></script>
 </body>
 </html>
